@@ -1,0 +1,341 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Detecting the operating system and CPU architecture
+[INFO] ------------------------------------------------------------------------
+[INFO] os.detected.name: linux
+[INFO] os.detected.arch: x86_64
+[INFO] os.detected.version: 4.4
+[INFO] os.detected.version.major: 4
+[INFO] os.detected.version.minor: 4
+[INFO] os.detected.release: ubuntu
+[INFO] os.detected.release.version: 16.04
+[INFO] os.detected.release.like.ubuntu: true
+[INFO] os.detected.release.like.debian: true
+[INFO] os.detected.classifier: linux-x86_64
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] grpc
+[INFO] grpc-demo-common
+[INFO] grpc-demo-server
+[INFO] grpc-demo-client
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building grpc 0.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-dependency-plugin:3.0.2:tree (default-cli) @ grpc ---
+[INFO] cz.airbank:grpc:pom:0.0.1-SNAPSHOT
+[INFO] +- org.springframework.boot:spring-boot-starter:jar:2.0.1.RELEASE:compile
+[INFO] |  +- org.springframework.boot:spring-boot:jar:2.0.1.RELEASE:compile
+[INFO] |  |  \- org.springframework:spring-context:jar:5.0.5.RELEASE:compile
+[INFO] |  |     +- org.springframework:spring-aop:jar:5.0.5.RELEASE:compile
+[INFO] |  |     +- org.springframework:spring-beans:jar:5.0.5.RELEASE:compile
+[INFO] |  |     \- org.springframework:spring-expression:jar:5.0.5.RELEASE:compile
+[INFO] |  +- org.springframework.boot:spring-boot-autoconfigure:jar:2.0.1.RELEASE:compile
+[INFO] |  +- org.springframework.boot:spring-boot-starter-logging:jar:2.0.1.RELEASE:compile
+[INFO] |  |  +- ch.qos.logback:logback-classic:jar:1.2.3:compile
+[INFO] |  |  |  \- ch.qos.logback:logback-core:jar:1.2.3:compile
+[INFO] |  |  +- org.apache.logging.log4j:log4j-to-slf4j:jar:2.10.0:compile
+[INFO] |  |  |  \- org.apache.logging.log4j:log4j-api:jar:2.10.0:compile
+[INFO] |  |  \- org.slf4j:jul-to-slf4j:jar:1.7.25:compile
+[INFO] |  +- javax.annotation:javax.annotation-api:jar:1.3.2:compile
+[INFO] |  +- org.springframework:spring-core:jar:5.0.5.RELEASE:compile
+[INFO] |  |  \- org.springframework:spring-jcl:jar:5.0.5.RELEASE:compile
+[INFO] |  \- org.yaml:snakeyaml:jar:1.19:runtime
+[INFO] +- org.springframework.boot:spring-boot-starter-test:jar:2.0.1.RELEASE:test
+[INFO] |  +- org.springframework.boot:spring-boot-test:jar:2.0.1.RELEASE:test
+[INFO] |  +- org.springframework.boot:spring-boot-test-autoconfigure:jar:2.0.1.RELEASE:test
+[INFO] |  +- com.jayway.jsonpath:json-path:jar:2.4.0:test
+[INFO] |  |  +- net.minidev:json-smart:jar:2.3:test
+[INFO] |  |  |  \- net.minidev:accessors-smart:jar:1.2:test
+[INFO] |  |  |     \- org.ow2.asm:asm:jar:5.0.4:test
+[INFO] |  |  \- org.slf4j:slf4j-api:jar:1.7.25:compile
+[INFO] |  +- junit:junit:jar:4.12:test
+[INFO] |  +- org.assertj:assertj-core:jar:3.9.1:test
+[INFO] |  +- org.mockito:mockito-core:jar:2.15.0:test
+[INFO] |  |  +- net.bytebuddy:byte-buddy:jar:1.7.11:test
+[INFO] |  |  +- net.bytebuddy:byte-buddy-agent:jar:1.7.11:test
+[INFO] |  |  \- org.objenesis:objenesis:jar:2.6:test
+[INFO] |  +- org.hamcrest:hamcrest-core:jar:1.3:test
+[INFO] |  +- org.hamcrest:hamcrest-library:jar:1.3:test
+[INFO] |  +- org.skyscreamer:jsonassert:jar:1.5.0:test
+[INFO] |  |  \- com.vaadin.external.google:android-json:jar:0.0.20131108.vaadin1:test
+[INFO] |  +- org.springframework:spring-test:jar:5.0.5.RELEASE:test
+[INFO] |  \- org.xmlunit:xmlunit-core:jar:2.5.1:test
+[INFO] \- net.devh:grpc-spring-boot-starter:pom:1.4.0.RELEASE:compile
+[INFO]    +- net.devh:grpc-server-spring-boot-starter:jar:1.4.0.RELEASE:compile
+[INFO]    |  \- net.devh:grpc-server-spring-boot-autoconfigure:jar:1.4.0.RELEASE:compile
+[INFO]    |     +- io.grpc:grpc-netty:jar:1.10.0:compile
+[INFO]    |     |  +- io.grpc:grpc-core:jar:1.10.0:compile (version selected from constraint [1.10.0,1.10.0])
+[INFO]    |     |  |  +- io.grpc:grpc-context:jar:1.10.0:compile
+[INFO]    |     |  |  +- com.google.code.gson:gson:jar:2.8.2:compile
+[INFO]    |     |  |  +- com.google.errorprone:error_prone_annotations:jar:2.1.2:compile
+[INFO]    |     |  |  +- com.google.code.findbugs:jsr305:jar:3.0.0:compile
+[INFO]    |     |  |  +- io.opencensus:opencensus-api:jar:0.11.0:compile
+[INFO]    |     |  |  \- io.opencensus:opencensus-contrib-grpc-metrics:jar:0.11.0:compile
+[INFO]    |     |  +- io.netty:netty-codec-http2:jar:4.1.23.Final:compile
+[INFO]    |     |  |  +- io.netty:netty-codec-http:jar:4.1.23.Final:compile
+[INFO]    |     |  |  |  \- io.netty:netty-codec:jar:4.1.23.Final:compile
+[INFO]    |     |  |  \- io.netty:netty-handler:jar:4.1.23.Final:compile
+[INFO]    |     |  |     \- io.netty:netty-buffer:jar:4.1.23.Final:compile
+[INFO]    |     |  |        \- io.netty:netty-common:jar:4.1.23.Final:compile
+[INFO]    |     |  \- io.netty:netty-handler-proxy:jar:4.1.23.Final:compile
+[INFO]    |     |     +- io.netty:netty-transport:jar:4.1.23.Final:compile
+[INFO]    |     |     |  \- io.netty:netty-resolver:jar:4.1.23.Final:compile
+[INFO]    |     |     \- io.netty:netty-codec-socks:jar:4.1.23.Final:compile
+[INFO]    |     +- io.grpc:grpc-protobuf:jar:1.10.0:compile
+[INFO]    |     |  +- com.google.protobuf:protobuf-java:jar:3.5.1:compile
+[INFO]    |     |  +- com.google.guava:guava:jar:19.0:compile
+[INFO]    |     |  +- com.google.protobuf:protobuf-java-util:jar:3.5.1:compile
+[INFO]    |     |  +- com.google.api.grpc:proto-google-common-protos:jar:1.0.0:compile
+[INFO]    |     |  \- io.grpc:grpc-protobuf-lite:jar:1.10.0:compile
+[INFO]    |     +- io.grpc:grpc-stub:jar:1.10.0:compile
+[INFO]    |     \- io.grpc:grpc-services:jar:1.10.0:compile
+[INFO]    |        \- com.google.instrumentation:instrumentation-api:jar:0.4.3:compile
+[INFO]    \- net.devh:grpc-client-spring-boot-starter:jar:1.4.0.RELEASE:compile
+[INFO]       \- net.devh:grpc-client-spring-boot-autoconfigure:jar:1.4.0.RELEASE:compile
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building grpc-demo-common 0.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-dependency-plugin:3.0.2:tree (default-cli) @ grpc-demo-common ---
+[INFO] cz.airbank:grpc-demo-common:jar:0.0.1-SNAPSHOT
+[INFO] +- org.springframework.boot:spring-boot-starter:jar:2.0.1.RELEASE:compile
+[INFO] |  +- org.springframework.boot:spring-boot:jar:2.0.1.RELEASE:compile
+[INFO] |  |  \- org.springframework:spring-context:jar:5.0.5.RELEASE:compile
+[INFO] |  |     +- org.springframework:spring-aop:jar:5.0.5.RELEASE:compile
+[INFO] |  |     +- org.springframework:spring-beans:jar:5.0.5.RELEASE:compile
+[INFO] |  |     \- org.springframework:spring-expression:jar:5.0.5.RELEASE:compile
+[INFO] |  +- org.springframework.boot:spring-boot-autoconfigure:jar:2.0.1.RELEASE:compile
+[INFO] |  +- org.springframework.boot:spring-boot-starter-logging:jar:2.0.1.RELEASE:compile
+[INFO] |  |  +- ch.qos.logback:logback-classic:jar:1.2.3:compile
+[INFO] |  |  |  \- ch.qos.logback:logback-core:jar:1.2.3:compile
+[INFO] |  |  +- org.apache.logging.log4j:log4j-to-slf4j:jar:2.10.0:compile
+[INFO] |  |  |  \- org.apache.logging.log4j:log4j-api:jar:2.10.0:compile
+[INFO] |  |  \- org.slf4j:jul-to-slf4j:jar:1.7.25:compile
+[INFO] |  +- javax.annotation:javax.annotation-api:jar:1.3.2:compile
+[INFO] |  +- org.springframework:spring-core:jar:5.0.5.RELEASE:compile
+[INFO] |  |  \- org.springframework:spring-jcl:jar:5.0.5.RELEASE:compile
+[INFO] |  \- org.yaml:snakeyaml:jar:1.19:runtime
+[INFO] +- org.springframework.boot:spring-boot-starter-test:jar:2.0.1.RELEASE:test
+[INFO] |  +- org.springframework.boot:spring-boot-test:jar:2.0.1.RELEASE:test
+[INFO] |  +- org.springframework.boot:spring-boot-test-autoconfigure:jar:2.0.1.RELEASE:test
+[INFO] |  +- com.jayway.jsonpath:json-path:jar:2.4.0:test
+[INFO] |  |  +- net.minidev:json-smart:jar:2.3:test
+[INFO] |  |  |  \- net.minidev:accessors-smart:jar:1.2:test
+[INFO] |  |  |     \- org.ow2.asm:asm:jar:5.0.4:test
+[INFO] |  |  \- org.slf4j:slf4j-api:jar:1.7.25:compile
+[INFO] |  +- junit:junit:jar:4.12:test
+[INFO] |  +- org.assertj:assertj-core:jar:3.9.1:test
+[INFO] |  +- org.mockito:mockito-core:jar:2.15.0:test
+[INFO] |  |  +- net.bytebuddy:byte-buddy:jar:1.7.11:test
+[INFO] |  |  +- net.bytebuddy:byte-buddy-agent:jar:1.7.11:test
+[INFO] |  |  \- org.objenesis:objenesis:jar:2.6:test
+[INFO] |  +- org.hamcrest:hamcrest-core:jar:1.3:test
+[INFO] |  +- org.hamcrest:hamcrest-library:jar:1.3:test
+[INFO] |  +- org.skyscreamer:jsonassert:jar:1.5.0:test
+[INFO] |  |  \- com.vaadin.external.google:android-json:jar:0.0.20131108.vaadin1:test
+[INFO] |  +- org.springframework:spring-test:jar:5.0.5.RELEASE:test
+[INFO] |  \- org.xmlunit:xmlunit-core:jar:2.5.1:test
+[INFO] \- net.devh:grpc-spring-boot-starter:pom:1.4.0.RELEASE:compile
+[INFO]    +- net.devh:grpc-server-spring-boot-starter:jar:1.4.0.RELEASE:compile
+[INFO]    |  \- net.devh:grpc-server-spring-boot-autoconfigure:jar:1.4.0.RELEASE:compile
+[INFO]    |     +- io.grpc:grpc-netty:jar:1.10.0:compile
+[INFO]    |     |  +- io.grpc:grpc-core:jar:1.10.0:compile (version selected from constraint [1.10.0,1.10.0])
+[INFO]    |     |  |  +- io.grpc:grpc-context:jar:1.10.0:compile
+[INFO]    |     |  |  +- com.google.code.gson:gson:jar:2.8.2:compile
+[INFO]    |     |  |  +- com.google.errorprone:error_prone_annotations:jar:2.1.2:compile
+[INFO]    |     |  |  +- com.google.code.findbugs:jsr305:jar:3.0.0:compile
+[INFO]    |     |  |  +- io.opencensus:opencensus-api:jar:0.11.0:compile
+[INFO]    |     |  |  \- io.opencensus:opencensus-contrib-grpc-metrics:jar:0.11.0:compile
+[INFO]    |     |  +- io.netty:netty-codec-http2:jar:4.1.23.Final:compile
+[INFO]    |     |  |  +- io.netty:netty-codec-http:jar:4.1.23.Final:compile
+[INFO]    |     |  |  |  \- io.netty:netty-codec:jar:4.1.23.Final:compile
+[INFO]    |     |  |  \- io.netty:netty-handler:jar:4.1.23.Final:compile
+[INFO]    |     |  |     \- io.netty:netty-buffer:jar:4.1.23.Final:compile
+[INFO]    |     |  |        \- io.netty:netty-common:jar:4.1.23.Final:compile
+[INFO]    |     |  \- io.netty:netty-handler-proxy:jar:4.1.23.Final:compile
+[INFO]    |     |     +- io.netty:netty-transport:jar:4.1.23.Final:compile
+[INFO]    |     |     |  \- io.netty:netty-resolver:jar:4.1.23.Final:compile
+[INFO]    |     |     \- io.netty:netty-codec-socks:jar:4.1.23.Final:compile
+[INFO]    |     +- io.grpc:grpc-protobuf:jar:1.10.0:compile
+[INFO]    |     |  +- com.google.protobuf:protobuf-java:jar:3.5.1:compile
+[INFO]    |     |  +- com.google.guava:guava:jar:19.0:compile
+[INFO]    |     |  +- com.google.protobuf:protobuf-java-util:jar:3.5.1:compile
+[INFO]    |     |  +- com.google.api.grpc:proto-google-common-protos:jar:1.0.0:compile
+[INFO]    |     |  \- io.grpc:grpc-protobuf-lite:jar:1.10.0:compile
+[INFO]    |     +- io.grpc:grpc-stub:jar:1.10.0:compile
+[INFO]    |     \- io.grpc:grpc-services:jar:1.10.0:compile
+[INFO]    |        \- com.google.instrumentation:instrumentation-api:jar:0.4.3:compile
+[INFO]    \- net.devh:grpc-client-spring-boot-starter:jar:1.4.0.RELEASE:compile
+[INFO]       \- net.devh:grpc-client-spring-boot-autoconfigure:jar:1.4.0.RELEASE:compile
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building grpc-demo-server 0.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-dependency-plugin:3.0.2:tree (default-cli) @ grpc-demo-server ---
+[INFO] cz.airbank:grpc-demo-server:jar:0.0.1-SNAPSHOT
+[INFO] +- cz.airbank:grpc-demo-common:jar:0.0.1-SNAPSHOT:compile
+[INFO] +- org.springframework.boot:spring-boot-starter:jar:2.0.1.RELEASE:compile
+[INFO] |  +- org.springframework.boot:spring-boot:jar:2.0.1.RELEASE:compile
+[INFO] |  |  \- org.springframework:spring-context:jar:5.0.5.RELEASE:compile
+[INFO] |  |     +- org.springframework:spring-aop:jar:5.0.5.RELEASE:compile
+[INFO] |  |     +- org.springframework:spring-beans:jar:5.0.5.RELEASE:compile
+[INFO] |  |     \- org.springframework:spring-expression:jar:5.0.5.RELEASE:compile
+[INFO] |  +- org.springframework.boot:spring-boot-autoconfigure:jar:2.0.1.RELEASE:compile
+[INFO] |  +- org.springframework.boot:spring-boot-starter-logging:jar:2.0.1.RELEASE:compile
+[INFO] |  |  +- ch.qos.logback:logback-classic:jar:1.2.3:compile
+[INFO] |  |  |  \- ch.qos.logback:logback-core:jar:1.2.3:compile
+[INFO] |  |  +- org.apache.logging.log4j:log4j-to-slf4j:jar:2.10.0:compile
+[INFO] |  |  |  \- org.apache.logging.log4j:log4j-api:jar:2.10.0:compile
+[INFO] |  |  \- org.slf4j:jul-to-slf4j:jar:1.7.25:compile
+[INFO] |  +- javax.annotation:javax.annotation-api:jar:1.3.2:compile
+[INFO] |  +- org.springframework:spring-core:jar:5.0.5.RELEASE:compile
+[INFO] |  |  \- org.springframework:spring-jcl:jar:5.0.5.RELEASE:compile
+[INFO] |  \- org.yaml:snakeyaml:jar:1.19:runtime
+[INFO] +- org.springframework.boot:spring-boot-starter-test:jar:2.0.1.RELEASE:test
+[INFO] |  +- org.springframework.boot:spring-boot-test:jar:2.0.1.RELEASE:test
+[INFO] |  +- org.springframework.boot:spring-boot-test-autoconfigure:jar:2.0.1.RELEASE:test
+[INFO] |  +- com.jayway.jsonpath:json-path:jar:2.4.0:test
+[INFO] |  |  +- net.minidev:json-smart:jar:2.3:test
+[INFO] |  |  |  \- net.minidev:accessors-smart:jar:1.2:test
+[INFO] |  |  |     \- org.ow2.asm:asm:jar:5.0.4:test
+[INFO] |  |  \- org.slf4j:slf4j-api:jar:1.7.25:compile
+[INFO] |  +- junit:junit:jar:4.12:test
+[INFO] |  +- org.assertj:assertj-core:jar:3.9.1:test
+[INFO] |  +- org.mockito:mockito-core:jar:2.15.0:test
+[INFO] |  |  +- net.bytebuddy:byte-buddy:jar:1.7.11:test
+[INFO] |  |  +- net.bytebuddy:byte-buddy-agent:jar:1.7.11:test
+[INFO] |  |  \- org.objenesis:objenesis:jar:2.6:test
+[INFO] |  +- org.hamcrest:hamcrest-core:jar:1.3:test
+[INFO] |  +- org.hamcrest:hamcrest-library:jar:1.3:test
+[INFO] |  +- org.skyscreamer:jsonassert:jar:1.5.0:test
+[INFO] |  |  \- com.vaadin.external.google:android-json:jar:0.0.20131108.vaadin1:test
+[INFO] |  +- org.springframework:spring-test:jar:5.0.5.RELEASE:test
+[INFO] |  \- org.xmlunit:xmlunit-core:jar:2.5.1:test
+[INFO] \- net.devh:grpc-spring-boot-starter:pom:1.4.0.RELEASE:compile
+[INFO]    +- net.devh:grpc-server-spring-boot-starter:jar:1.4.0.RELEASE:compile
+[INFO]    |  \- net.devh:grpc-server-spring-boot-autoconfigure:jar:1.4.0.RELEASE:compile
+[INFO]    |     +- io.grpc:grpc-netty:jar:1.10.0:compile
+[INFO]    |     |  +- io.grpc:grpc-core:jar:1.10.0:compile (version selected from constraint [1.10.0,1.10.0])
+[INFO]    |     |  |  +- io.grpc:grpc-context:jar:1.10.0:compile
+[INFO]    |     |  |  +- com.google.code.gson:gson:jar:2.8.2:compile
+[INFO]    |     |  |  +- com.google.errorprone:error_prone_annotations:jar:2.1.2:compile
+[INFO]    |     |  |  +- com.google.code.findbugs:jsr305:jar:3.0.0:compile
+[INFO]    |     |  |  +- io.opencensus:opencensus-api:jar:0.11.0:compile
+[INFO]    |     |  |  \- io.opencensus:opencensus-contrib-grpc-metrics:jar:0.11.0:compile
+[INFO]    |     |  +- io.netty:netty-codec-http2:jar:4.1.23.Final:compile
+[INFO]    |     |  |  +- io.netty:netty-codec-http:jar:4.1.23.Final:compile
+[INFO]    |     |  |  |  \- io.netty:netty-codec:jar:4.1.23.Final:compile
+[INFO]    |     |  |  \- io.netty:netty-handler:jar:4.1.23.Final:compile
+[INFO]    |     |  |     \- io.netty:netty-buffer:jar:4.1.23.Final:compile
+[INFO]    |     |  |        \- io.netty:netty-common:jar:4.1.23.Final:compile
+[INFO]    |     |  \- io.netty:netty-handler-proxy:jar:4.1.23.Final:compile
+[INFO]    |     |     +- io.netty:netty-transport:jar:4.1.23.Final:compile
+[INFO]    |     |     |  \- io.netty:netty-resolver:jar:4.1.23.Final:compile
+[INFO]    |     |     \- io.netty:netty-codec-socks:jar:4.1.23.Final:compile
+[INFO]    |     +- io.grpc:grpc-protobuf:jar:1.10.0:compile
+[INFO]    |     |  +- com.google.protobuf:protobuf-java:jar:3.5.1:compile
+[INFO]    |     |  +- com.google.guava:guava:jar:19.0:compile
+[INFO]    |     |  +- com.google.protobuf:protobuf-java-util:jar:3.5.1:compile
+[INFO]    |     |  +- com.google.api.grpc:proto-google-common-protos:jar:1.0.0:compile
+[INFO]    |     |  \- io.grpc:grpc-protobuf-lite:jar:1.10.0:compile
+[INFO]    |     +- io.grpc:grpc-stub:jar:1.10.0:compile
+[INFO]    |     \- io.grpc:grpc-services:jar:1.10.0:compile
+[INFO]    |        \- com.google.instrumentation:instrumentation-api:jar:0.4.3:compile
+[INFO]    \- net.devh:grpc-client-spring-boot-starter:jar:1.4.0.RELEASE:compile
+[INFO]       \- net.devh:grpc-client-spring-boot-autoconfigure:jar:1.4.0.RELEASE:compile
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building grpc-demo-client 0.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-dependency-plugin:3.0.2:tree (default-cli) @ grpc-demo-client ---
+[INFO] cz.airbank:grpc-demo-client:jar:0.0.1-SNAPSHOT
+[INFO] +- cz.airbank:grpc-demo-common:jar:0.0.1-SNAPSHOT:compile
+[INFO] +- org.springframework.boot:spring-boot-starter:jar:2.0.1.RELEASE:compile
+[INFO] |  +- org.springframework.boot:spring-boot:jar:2.0.1.RELEASE:compile
+[INFO] |  |  \- org.springframework:spring-context:jar:5.0.5.RELEASE:compile
+[INFO] |  |     +- org.springframework:spring-aop:jar:5.0.5.RELEASE:compile
+[INFO] |  |     +- org.springframework:spring-beans:jar:5.0.5.RELEASE:compile
+[INFO] |  |     \- org.springframework:spring-expression:jar:5.0.5.RELEASE:compile
+[INFO] |  +- org.springframework.boot:spring-boot-autoconfigure:jar:2.0.1.RELEASE:compile
+[INFO] |  +- org.springframework.boot:spring-boot-starter-logging:jar:2.0.1.RELEASE:compile
+[INFO] |  |  +- ch.qos.logback:logback-classic:jar:1.2.3:compile
+[INFO] |  |  |  \- ch.qos.logback:logback-core:jar:1.2.3:compile
+[INFO] |  |  +- org.apache.logging.log4j:log4j-to-slf4j:jar:2.10.0:compile
+[INFO] |  |  |  \- org.apache.logging.log4j:log4j-api:jar:2.10.0:compile
+[INFO] |  |  \- org.slf4j:jul-to-slf4j:jar:1.7.25:compile
+[INFO] |  +- javax.annotation:javax.annotation-api:jar:1.3.2:compile
+[INFO] |  +- org.springframework:spring-core:jar:5.0.5.RELEASE:compile
+[INFO] |  |  \- org.springframework:spring-jcl:jar:5.0.5.RELEASE:compile
+[INFO] |  \- org.yaml:snakeyaml:jar:1.19:runtime
+[INFO] +- org.springframework.boot:spring-boot-starter-test:jar:2.0.1.RELEASE:test
+[INFO] |  +- org.springframework.boot:spring-boot-test:jar:2.0.1.RELEASE:test
+[INFO] |  +- org.springframework.boot:spring-boot-test-autoconfigure:jar:2.0.1.RELEASE:test
+[INFO] |  +- com.jayway.jsonpath:json-path:jar:2.4.0:test
+[INFO] |  |  +- net.minidev:json-smart:jar:2.3:test
+[INFO] |  |  |  \- net.minidev:accessors-smart:jar:1.2:test
+[INFO] |  |  |     \- org.ow2.asm:asm:jar:5.0.4:test
+[INFO] |  |  \- org.slf4j:slf4j-api:jar:1.7.25:compile
+[INFO] |  +- junit:junit:jar:4.12:test
+[INFO] |  +- org.assertj:assertj-core:jar:3.9.1:test
+[INFO] |  +- org.mockito:mockito-core:jar:2.15.0:test
+[INFO] |  |  +- net.bytebuddy:byte-buddy:jar:1.7.11:test
+[INFO] |  |  +- net.bytebuddy:byte-buddy-agent:jar:1.7.11:test
+[INFO] |  |  \- org.objenesis:objenesis:jar:2.6:test
+[INFO] |  +- org.hamcrest:hamcrest-core:jar:1.3:test
+[INFO] |  +- org.hamcrest:hamcrest-library:jar:1.3:test
+[INFO] |  +- org.skyscreamer:jsonassert:jar:1.5.0:test
+[INFO] |  |  \- com.vaadin.external.google:android-json:jar:0.0.20131108.vaadin1:test
+[INFO] |  +- org.springframework:spring-test:jar:5.0.5.RELEASE:test
+[INFO] |  \- org.xmlunit:xmlunit-core:jar:2.5.1:test
+[INFO] \- net.devh:grpc-spring-boot-starter:pom:1.4.0.RELEASE:compile
+[INFO]    +- net.devh:grpc-server-spring-boot-starter:jar:1.4.0.RELEASE:compile
+[INFO]    |  \- net.devh:grpc-server-spring-boot-autoconfigure:jar:1.4.0.RELEASE:compile
+[INFO]    |     +- io.grpc:grpc-netty:jar:1.10.0:compile
+[INFO]    |     |  +- io.grpc:grpc-core:jar:1.10.0:compile (version selected from constraint [1.10.0,1.10.0])
+[INFO]    |     |  |  +- io.grpc:grpc-context:jar:1.10.0:compile
+[INFO]    |     |  |  +- com.google.code.gson:gson:jar:2.8.2:compile
+[INFO]    |     |  |  +- com.google.errorprone:error_prone_annotations:jar:2.1.2:compile
+[INFO]    |     |  |  +- com.google.code.findbugs:jsr305:jar:3.0.0:compile
+[INFO]    |     |  |  +- io.opencensus:opencensus-api:jar:0.11.0:compile
+[INFO]    |     |  |  \- io.opencensus:opencensus-contrib-grpc-metrics:jar:0.11.0:compile
+[INFO]    |     |  +- io.netty:netty-codec-http2:jar:4.1.23.Final:compile
+[INFO]    |     |  |  +- io.netty:netty-codec-http:jar:4.1.23.Final:compile
+[INFO]    |     |  |  |  \- io.netty:netty-codec:jar:4.1.23.Final:compile
+[INFO]    |     |  |  \- io.netty:netty-handler:jar:4.1.23.Final:compile
+[INFO]    |     |  |     \- io.netty:netty-buffer:jar:4.1.23.Final:compile
+[INFO]    |     |  |        \- io.netty:netty-common:jar:4.1.23.Final:compile
+[INFO]    |     |  \- io.netty:netty-handler-proxy:jar:4.1.23.Final:compile
+[INFO]    |     |     +- io.netty:netty-transport:jar:4.1.23.Final:compile
+[INFO]    |     |     |  \- io.netty:netty-resolver:jar:4.1.23.Final:compile
+[INFO]    |     |     \- io.netty:netty-codec-socks:jar:4.1.23.Final:compile
+[INFO]    |     +- io.grpc:grpc-protobuf:jar:1.10.0:compile
+[INFO]    |     |  +- com.google.protobuf:protobuf-java:jar:3.5.1:compile
+[INFO]    |     |  +- com.google.guava:guava:jar:19.0:compile
+[INFO]    |     |  +- com.google.protobuf:protobuf-java-util:jar:3.5.1:compile
+[INFO]    |     |  +- com.google.api.grpc:proto-google-common-protos:jar:1.0.0:compile
+[INFO]    |     |  \- io.grpc:grpc-protobuf-lite:jar:1.10.0:compile
+[INFO]    |     +- io.grpc:grpc-stub:jar:1.10.0:compile
+[INFO]    |     \- io.grpc:grpc-services:jar:1.10.0:compile
+[INFO]    |        \- com.google.instrumentation:instrumentation-api:jar:0.4.3:compile
+[INFO]    \- net.devh:grpc-client-spring-boot-starter:jar:1.4.0.RELEASE:compile
+[INFO]       \- net.devh:grpc-client-spring-boot-autoconfigure:jar:1.4.0.RELEASE:compile
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] grpc ............................................... SUCCESS [  6.010 s]
+[INFO] grpc-demo-common ................................... SUCCESS [  0.972 s]
+[INFO] grpc-demo-server ................................... SUCCESS [  0.071 s]
+[INFO] grpc-demo-client ................................... SUCCESS [  0.064 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 9.253 s
+[INFO] Finished at: 2018-05-03T15:34:51+02:00
+[INFO] Final Memory: 29M/386M
+[INFO] ------------------------------------------------------------------------

@@ -1,0 +1,21 @@
+syntax = "proto3";
+option java_package = "cz.airbank.grpc";
+
+message TestRequest {
+    string text = 1;
+}
+
+message TestResponse {
+    string text = 1;
+    int32 number = 2;
+}
+
+service TestService{
+    rpc test(TestRequest) returns (TestResponse);
+
+    rpc testServerStream(TestRequest) returns (stream TestResponse);
+
+    rpc testClientStream(stream TestRequest) returns (TestResponse);
+
+    rpc testBidi(stream TestRequest) returns (stream TestResponse);
+}
