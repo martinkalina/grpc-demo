@@ -2,31 +2,32 @@ package cz.airbank.grpc.client;
 
 import java.util.Iterator;
 
-import org.springframework.stereotype.Service;
-
 import cz.airbank.grpc.Demo;
 import cz.airbank.grpc.TestServiceGrpc;
 import cz.airbank.grpc.common.Constant;
-import io.grpc.CallOptions;
-import io.grpc.Channel;
-import io.grpc.ClientCall;
-import io.grpc.ClientInterceptor;
+import io.grpc.ManagedChannel;
 import io.grpc.Metadata;
-import io.grpc.MethodDescriptor;
+import io.grpc.netty.NettyChannelBuilder;
 import io.grpc.stub.MetadataUtils;
 import io.grpc.stub.StreamObserver;
-import net.devh.springboot.autoconfigure.grpc.client.GrpcClient;
 
+public class GrpcSimpleClient {
 
-@Service
-public class GrpcClientService {
+    private final ManagedChannel channel ;
 
-
-    @GrpcClient(value = "local-grpc-server", interceptors = Interceptor.class)
-    private Channel channel;
+    public GrpcSimpleClient() {
+        Metadata md = new Metadata();
+        md.put(Constant.SECRET_CTX_KEY, Constant.SECRET);
+        channel = NettyChannelBuilder
+                .forAddress("localhost", 9898)
+                .intercept(MetadataUtils.newAttachHeadersInterceptor(md))
+                .usePlaintext()
+                .build();
+    }
 
 
     public String sendMessage(String text) {
+
         TestServiceGrpc.TestServiceBlockingStub stub = TestServiceGrpc.newBlockingStub(channel);
         Demo.TestResponse response = stub.test(Demo.TestRequest.newBuilder().setText(text).build());
         return response.getText();
@@ -51,18 +52,5 @@ public class GrpcClientService {
 
     }
 
-    public static class Interceptor implements ClientInterceptor{
-        private final ClientInterceptor delegate ;
-        public Interceptor() {
-            Metadata md = new Metadata();
-            md.put(Constant.SECRET_CTX_KEY, Constant.SECRET);
-            delegate = MetadataUtils.newAttachHeadersInterceptor(md);
-        }
-
-        @Override
-        public <ReqT, RespT> ClientCall<ReqT, RespT> interceptCall(MethodDescriptor<ReqT, RespT> method, CallOptions callOptions, Channel next) {
-            return delegate.interceptCall(method, callOptions, next);
-        }
-    }
 
 }

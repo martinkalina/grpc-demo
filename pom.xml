@@ -10,7 +10,9 @@
 		<module>server</module>
 		<module>client</module>
 		<module>common</module>
-	</modules>
+		<module>simple-server</module>
+        <module>simple-client</module>
+    </modules>
 	<packaging>pom</packaging>
 
 	<name>grpc</name>
@@ -27,10 +29,8 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>8</java.version>
-		<grpc.version>1.11.0</grpc.version>
-		<os.plugin.version>1.5.0.Final</os.plugin.version>
-		<protobuf.plugin.version>0.5.0</protobuf.plugin.version>
-		<protoc.version>3.3.0</protoc.version>
+		
+
 	</properties>
 
 	<dependencies>
@@ -63,7 +63,7 @@
 
 	</dependencies>
 
-	
+
 
 
 </project>

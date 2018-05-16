@@ -6,6 +6,6 @@ grpc:
   client:
     local-grpc-server:
 #      port: 30390 # k8s
-      port: 9898 # local
+      port: 9899 # local
       enableKeepAlive: true
       keepAliveWithoutCalls: true

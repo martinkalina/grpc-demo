@@ -1,4 +1,4 @@
-package cz.airbank.grpc.server;
+package cz.airbank.grpc.simple.server;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -8,11 +8,8 @@ import org.slf4j.LoggerFactory;
 
 import cz.airbank.grpc.Demo;
 import cz.airbank.grpc.TestServiceGrpc;
-import cz.airbank.grpc.common.SecretDetectInterceptor;
 import io.grpc.stub.StreamObserver;
-import net.devh.springboot.autoconfigure.grpc.server.GrpcService;
 
-@GrpcService(value = TestServiceGrpc.class, interceptors = SecretDetectInterceptor.class)
 public class DemoServerService extends TestServiceGrpc.TestServiceImplBase {
 
     private int counter;

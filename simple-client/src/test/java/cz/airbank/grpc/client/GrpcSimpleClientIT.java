@@ -2,39 +2,39 @@ package cz.airbank.grpc.client;
 
 import java.util.Iterator;
 import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
 
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import cz.airbank.grpc.Demo;
+import io.grpc.StatusRuntimeException;
 import io.grpc.stub.StreamObserver;
 
-@RunWith(SpringRunner.class)
-@SpringBootTest
-public class GrpcClientServiceIT {
+public class GrpcSimpleClientIT {
 
-    private static final Logger LOG = LoggerFactory.getLogger(GrpcClientService.class);
+    private static final Logger LOG = LoggerFactory.getLogger(GrpcSimpleClient.class);
 
-    @Autowired
-    private GrpcClientService clientService;
+    private GrpcSimpleClient clientService = new GrpcSimpleClient();
 
 
     @Test
     public void sendMessage() {
-        double count = 1000;
-        long ts = System.currentTimeMillis();
-        for (int i = 0; i < count; i++) {
-            LOG.info(clientService.sendMessage("message " + i));
+        try {
+            double count = 1000;
+            long ts = System.currentTimeMillis();
+            for (int i = 0; i < count; i++) {
+                LOG.info(clientService.sendMessage("message " + i));
+            }
+            long d = System.currentTimeMillis() - ts;
+            LOG.info("Send/received {} messages, {} ms each", count, d / count);
+        } catch (StatusRuntimeException e) {
+            // error handling
+            String description = e.getStatus().getDescription();
+            LOG.warn(description);
+            throw new AssertionError(e);
         }
-        long d = System.currentTimeMillis() - ts;
-        LOG.info("Send/received {} messages, {} ms each", count, d / count);
     }
 
     @Test
